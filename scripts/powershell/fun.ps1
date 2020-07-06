@@ -1,0 +1,1 @@
+echo "This is the fun script!"
