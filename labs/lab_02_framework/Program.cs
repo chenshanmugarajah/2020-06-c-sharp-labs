@@ -11,6 +11,7 @@ namespace lab_02_framework
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Chen");
+            Console.WriteLine("Testing!");
         }
     }
 }
