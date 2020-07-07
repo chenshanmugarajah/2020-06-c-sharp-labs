@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,16 +29,29 @@ namespace lab_04_wpf_core
         }
 
         static int firstNumber = 0;
-        static int secondNumber = 0;
+        static int secondNumber1 = 0;
+        static string operation = "";
+
+        int getAnswer()
+        {
+            switch (operation)
+            {
+                case "*": return firstNumber * secondNumber1;
+                case "/": return firstNumber / secondNumber1;
+                case "+": return firstNumber + secondNumber1;
+                case "-": return firstNumber - secondNumber1;
+                default: return 69;
+            }
+        }
 
         private void Button01_Click(object sender, RoutedEventArgs e)
         {
-            LabelDisplay.Content += (string) Button01.Content;
+            LabelDisplay.Content += (string)Button01.Content;
         }
 
         private void Button02_Click(object sender, RoutedEventArgs e)
         {
-            LabelDisplay.Content += (string) Button02.Content;
+            LabelDisplay.Content += (string)Button02.Content;
         }
 
         private void Button03_Click(object sender, RoutedEventArgs e)
@@ -80,30 +94,50 @@ namespace lab_04_wpf_core
             LabelDisplay.Content += (string)Button00.Content;
         }
 
-        string symbol = "";
-
         private void ButtonPlus_Click(object sender, RoutedEventArgs e)
         {
+            operation = "+";
             firstNumber = Convert.ToInt32(LabelDisplay.Content);
-            symbol = (string) ButtonPlus.Content;
+            LabelDisplay.Content = "";
+        }
+
+        private void ButtonMinus_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "-";
+            firstNumber = Convert.ToInt32(LabelDisplay.Content);
+            LabelDisplay.Content = "";
+        }
+
+        private void ButtonMultiply_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "*";
+            firstNumber = Convert.ToInt32(LabelDisplay.Content);
+            LabelDisplay.Content = "";
+        }
+
+        private void ButtonDivide_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "/";
+            firstNumber = Convert.ToInt32(LabelDisplay.Content);
             LabelDisplay.Content = "";
         }
 
         private void ButtonEquals_Click(object sender, RoutedEventArgs e)
         {
-            if (secondNumber == null)
-            {
-                LabelDisplay.Content = "Enter a number";
-            }
-            else
-            {
-                secondNumber = Convert.ToInt32(LabelDisplay.Content);
-                LabelDisplay.Content = firstNumber + secondNumber;
-            }
+            secondNumber1 = Convert.ToInt32(LabelDisplay.Content);
+            int ans = getAnswer();
+            string answer = ans.ToString();
+            LabelDisplay.Content = firstNumber + operation + secondNumber1 + " = " + answer;
+
+            firstNumber = 0;
+            secondNumber1 = 0;
+            operation = "";
         }
 
         private void ButtonAC_Click(object sender, RoutedEventArgs e)
         {
+            firstNumber = 0;
+            secondNumber1 = 0;
             LabelDisplay.Content = "";
         }
     }
