@@ -40,7 +40,7 @@ namespace lab_04_wpf_core
                 case "/": return firstNumber / secondNumber1;
                 case "+": return firstNumber + secondNumber1;
                 case "-": return firstNumber - secondNumber1;
-                default: return 69;
+                default: return Convert.ToInt32(LabelDisplay.Content);
             }
         }
 
@@ -127,7 +127,7 @@ namespace lab_04_wpf_core
             secondNumber1 = Convert.ToInt32(LabelDisplay.Content);
             int ans = getAnswer();
             string answer = ans.ToString();
-            LabelDisplay.Content = firstNumber + " " + operation + " " + secondNumber1 + " = " + answer;
+            LabelDisplay.Content = answer;
 
             firstNumber = 0;
             secondNumber1 = 0;
