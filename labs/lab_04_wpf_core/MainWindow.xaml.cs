@@ -127,7 +127,7 @@ namespace lab_04_wpf_core
             secondNumber1 = Convert.ToInt32(LabelDisplay.Content);
             int ans = getAnswer();
             string answer = ans.ToString();
-            LabelDisplay.Content = firstNumber + operation + secondNumber1 + " = " + answer;
+            LabelDisplay.Content = firstNumber + " " + operation + " " + secondNumber1 + " = " + answer;
 
             firstNumber = 0;
             secondNumber1 = 0;
@@ -138,6 +138,7 @@ namespace lab_04_wpf_core
         {
             firstNumber = 0;
             secondNumber1 = 0;
+            operation = "";
             LabelDisplay.Content = "";
         }
     }
