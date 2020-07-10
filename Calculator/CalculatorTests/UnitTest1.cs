@@ -46,6 +46,30 @@ namespace CalculatorTests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCase(18, 0)]
+        [TestCase(3, 0)]
+        public void DivideIsPositiveInfinity(double a, double b)
+        {
+            var actual = StaticCalculator.divide(a, b);
+            var response = double.IsPositiveInfinity(a / b) ? "true" : "false";
+            if (response.Equals("true"))
+            {
+                Assert.Pass();
+            }
+        }
+
+        [TestCase(-8, 0)]
+        [TestCase(-2, 0)]
+        public void DivideIsNegativeInfinity(double a, double b)
+        {
+            var actual = StaticCalculator.divide(a, b);
+            var response = double.IsNegativeInfinity(a / b) ? "true" : "false";
+            if (response.Equals("true"))
+            {
+                Assert.Pass();
+            }
+        }
+
         [TestCase(10, 4, 2)]
         [TestCase(2, 3, 2)]
         [TestCase(7, 3, 1)]
