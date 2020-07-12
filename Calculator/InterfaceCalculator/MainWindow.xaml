@@ -1,0 +1,44 @@
+﻿<Window x:Class="InterfaceCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterfaceCalculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" FontSize="25">
+    <Grid Background="SlateGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+
+        <Label x:Name="LabelTitle" Content="Calculator" FontWeight="Bold" FontSize="35" Foreground="White"
+               Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Name="Input1" Margin="6" HorizontalContentAlignment="Right" Padding="0, 0, 20, 0" VerticalContentAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Name="Input2" Margin="6" HorizontalContentAlignment="Right" Padding="0, 0, 20, 0" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="LabelAnswer" Grid.Row="3" Grid.Column="1" Background="White" Margin="7" Grid.ColumnSpan="4" Content="0" HorizontalContentAlignment="Right" Padding="0, 0, 20, 0" VerticalContentAlignment="Center"/>
+
+        <Button x:Name="ButtonPlus" Grid.Row="4" Grid.Column="1" Background="#FF9500" Foreground="White" Content="+" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonPlus_Click"/>
+        <Button x:Name="ButtonMinus" Grid.Row="5" Grid.Column="1" Background="#FF9500" Foreground="White" Content="-" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonMinus_Click" />
+        <Button x:Name="ButtonMultiply" Grid.Row="5" Grid.Column="2" Background="#FF9500" Foreground="White" Content="*" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonMultiply_Click"/>
+        <Button x:Name="ButtonDivide" Grid.Row="4" Grid.Column="3" Background="#FF9500" Foreground="White" Content="/" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonDivide_Click" />
+        <Button x:Name="ButtonModular" Grid.Row="4" Grid.Column="2" Background="#FF9500" Foreground="White" Content="%" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonModular_Click" />
+        <Button x:Name="ButtonMemory" Grid.Row="5" Grid.Column="3" Background="#FF9500" Foreground="White" Content="MR" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonMemory_Click" />
+        <Button x:Name="ButtonAC" Grid.Row="4" Grid.Column="4" Grid.RowSpan="2" Content="AC" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="ButtonAC_Click" />
+    </Grid>
+</Window>
