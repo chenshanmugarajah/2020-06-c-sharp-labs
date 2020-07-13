@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterationExercises", "IterationExercises\IterationExercises.csproj", "{275DBBB7-888E-47A3-8A68-B5627D373BAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterationTests", "IterationTests\IterationTests.csproj", "{C4ECEF71-8AC4-4D47-A2E0-4133B83376F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{275DBBB7-888E-47A3-8A68-B5627D373BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{275DBBB7-888E-47A3-8A68-B5627D373BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{275DBBB7-888E-47A3-8A68-B5627D373BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{275DBBB7-888E-47A3-8A68-B5627D373BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4ECEF71-8AC4-4D47-A2E0-4133B83376F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4ECEF71-8AC4-4D47-A2E0-4133B83376F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4ECEF71-8AC4-4D47-A2E0-4133B83376F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4ECEF71-8AC4-4D47-A2E0-4133B83376F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2DA5FBD-5F76-438F-9EEA-4844B99CF02E}
+	EndGlobalSection
+EndGlobal
