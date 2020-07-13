@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using PhilPowerTests;
 using System;
 
 namespace PhilPowerTest
@@ -10,17 +11,16 @@ namespace PhilPowerTest
         {
         }
 
-        [Test]
-        public void Test1()
-        {
-            Assert.Pass();
-        }
-
+        [TestCase(2, 2, 2)]
+        [TestCase(2, 5, 2)]
         public void multiplyPowersTest(double x, double y, int z)
         {
             double ans = x * y;
-            for 
-            Assert.AreEqual()
+            for (int i=1; i<z; i++)
+            {
+                ans *= ans;
+            }
+            Assert.AreEqual(ans, Powers.RaiseToPower(x, y, z));
         }
     }
 }

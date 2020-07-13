@@ -30,7 +30,7 @@ namespace PhilLoops
             }
             catch (Exception e)
             {
-                Console.WriteLine($"\nError");
+                Console.WriteLine($"\nInvalid input\n");
                 Console.WriteLine("Please enter a number between 1 and 4");
                 menu();
             }
@@ -50,7 +50,7 @@ namespace PhilLoops
                     break;
                 case 0: Console.WriteLine("Exiting..");
                     break;
-                default: Console.WriteLine("Invalid input");
+                default: Console.WriteLine("\nInvalid input\n");
                     menu();
                     break;
             }
