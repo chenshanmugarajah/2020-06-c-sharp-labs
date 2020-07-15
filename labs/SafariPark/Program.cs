@@ -7,22 +7,15 @@ namespace SafariPark
     {
         static void Main(string[] args)
         {
-            //Hunter Bryn = new Hunter("Bryn", "Morley", "Sony") { Age = 25 };
-            //Console.WriteLine(Bryn.ToString());
 
-            Person p1 = new Person("Nish", "Mandal");
-            Hunter h1 = new Hunter("Hunter", "Mate");
-            MonsterHunter mh1 = new MonsterHunter("Monster", "Lad", "Nikon", "Love");
-
-            var safariList = new List<Object>();
-            safariList.Add(p1);
-            safariList.Add(h1);
-            safariList.Add(mh1);
-
-            foreach(var item in safariList)
-            {
-                Console.WriteLine(item);
-            }
+            Airplane a = new Airplane(200, 100, "JetsRUs") { NumPassengers = 150 };
+            a.Ascend(500);
+            Console.WriteLine(a.Move(3));
+            Console.WriteLine(a);
+            a.Descend(200);
+            Console.WriteLine(a.Move());
+            a.Move();
+            Console.WriteLine(a);
 
         }
     }

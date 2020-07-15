@@ -20,15 +20,15 @@ namespace SafariPark
             }
         }
 
-        public int Position { get; private set; }
+        public int Position { get; protected set; }
 
-        public string Move(int times)
+        public virtual string Move(int times)
         {
             Position += times * _speed;
             return $"Moving along {times} times";
         }
 
-        public string Move()
+        public virtual string Move()
         {
             Position += _speed;
             return "Moving along";
@@ -43,6 +43,11 @@ namespace SafariPark
         {
             _capacity = capacity;
             _speed = speed;
+        }
+
+        public override string ToString()
+        {
+            return $"{base.GetType()} capacity: {_capacity} passengers: {_numPassengers} speed: {_speed} position: {Position}";
         }
     }
 }
