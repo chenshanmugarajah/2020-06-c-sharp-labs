@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SafariPark
 {
@@ -6,20 +7,22 @@ namespace SafariPark
     {
         static void Main(string[] args)
         {
-            //Person cathy = new Person("Cathy", "French");
-            //Console.WriteLine(cathy.GetFullName());
+            //Hunter Bryn = new Hunter("Bryn", "Morley", "Sony") { Age = 25 };
+            //Console.WriteLine(Bryn.ToString());
 
-            //cathy.Age = 22;
+            Person p1 = new Person("Nish", "Mandal");
+            Hunter h1 = new Hunter("Hunter", "Mate");
+            MonsterHunter mh1 = new MonsterHunter("Monster", "Lad", "Nikon", "Love");
 
-            //Console.WriteLine(cathy.Age);
+            var safariList = new List<Object>();
+            safariList.Add(p1);
+            safariList.Add(h1);
+            safariList.Add(mh1);
 
-            //Person cathy = new Person("Cathy", "French");
-            //Person nish = new Person();
-            //Person phil = new Person("Phil", "Anderson");
-
-            //Console.WriteLine(nish.GetFullName());
-
-            //var s1 = new Point3D() { x = 1, y = 2, z = 3 };
+            foreach(var item in safariList)
+            {
+                Console.WriteLine(item);
+            }
 
         }
     }
