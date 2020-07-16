@@ -58,5 +58,35 @@ namespace SafariTest
             Assert.AreEqual(40, v.Position);
             Assert.AreEqual("Moving along", result);
         }
+
+        [Test]
+        public void UpAltitudeTest()
+        {
+            Airplane air1 = new Airplane(200);
+            air1.Ascend(100);
+            var altitudeArr = air1.ToString().Split();
+            var altitude = altitudeArr[altitudeArr.Length - 1];
+            Assert.AreEqual("100", altitude);
+        }
+
+        [Test]
+        public void DownAltitudeTest()
+        {
+            Airplane air1 = new Airplane(200);
+            air1.Descend(200);
+            var altitudeArr = air1.ToString().Split();
+            var altitude = altitudeArr[altitudeArr.Length - 1];
+            Assert.AreEqual("0", altitude);
+        }
+
+        [Test]
+        public void MovePlaneTest()
+        {
+            Airplane air1 = new Airplane(200);
+            air1.Move(100);
+            Assert.AreEqual(1000, air1.Position);
+        }
+
+
     }
 }

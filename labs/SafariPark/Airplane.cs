@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SafariPark
 {
-    class Airplane : Vehicle
+    public class Airplane : Vehicle
     {
         private string _airline;
         private int _altitude;
@@ -25,19 +25,20 @@ namespace SafariPark
 
         public void Descend(int distance)
         {
-            _altitude -= distance;
+            if (_altitude > distance) _altitude -= distance;
+            else _altitude = 0;
         }
 
         public override string Move()
         {
-            Position += 200;
-            return $"Moving along at an altitude of 300 metres.";
+            base.Move();
+            return $"Moving along at an altitude of {_altitude} metres.";
         }
 
         public override string Move(int times)
         {
             base.Move(times);
-            return $"Moving along {times} times at an altitude of 300 metres.";
+            return $"Moving along {times} times at an altitude of {_altitude} metres.";
         }
 
         public override string ToString()
