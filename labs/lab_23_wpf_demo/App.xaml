@@ -1,0 +1,9 @@
+﻿<Application x:Class="lab_23_wpf_demo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:lab_23_wpf_demo"
+             StartupUri="Greeting.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
