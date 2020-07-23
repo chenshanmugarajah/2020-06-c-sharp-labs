@@ -1,0 +1,18 @@
+{
+    "students": [
+        {
+            "studentid": "M00616452",
+            "studentFirstName": "Chen",
+            "studentLastName": "Shanmugarajah",
+            "joinedDate": "30th September 2017",
+            "enrolledModules": ["CST3550", "CST3999", "CST3110", "CST3130"]
+        },
+        {
+            "studentid": "M00616452",
+            "studentFirstName": "Chen",
+            "studentLastName": "Shanmugarajah",
+            "joinedDate": "30th September 2017",
+            "enrolledModules": ["CST3550", "CST3999", "CST3110", "CST3130"]
+        }
+    ]
+}
