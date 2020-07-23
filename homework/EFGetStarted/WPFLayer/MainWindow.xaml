@@ -1,0 +1,68 @@
+﻿<Window x:Class="WPFLayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFLayer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <ListBox x:Name="ListBoxBlog" Grid.Row="0" Grid.Column="0" Background="#f4f4f4" SelectionChanged="ListBoxBlog_SelectionChanged"/>
+
+        <ListBox x:Name="ListBoxPost" Grid.Row="0" Grid.Column="1" Background="#f4f4f9" SelectionChanged="ListBoxPost_SelectionChanged" />
+
+        <Grid Grid.Row="1" Grid.Column="0" Background="AliceBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <TextBox x:Name="TextBlogNameInput" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="20px" Text="Enter a name for a blog"/> <!-- include https://www. later .com --> 
+            <Button x:Name="ButtonCreateBlog" Grid.Column="0" Grid.Row="1" Content="Create Blog" Margin="20px" Click="ButtonCreateBlog_Click" />
+            <Button x:Name="ButtonDeleteBlog" Grid.Column="1" Grid.Row="1" Content="Delete Blog" Margin="20px" Click="ButtonDeleteBlog_Click" />
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1" Background="Beige">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label x:Name="LabelBlogID" Grid.Row="0" Grid.Column="0" Content="Blog ID:" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="LabelPostID" Grid.Row="1" Grid.Column="0" Content="Post ID:" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="LabelPostTitle" Grid.Row="2" Grid.Column="0" Content="Post Title:" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="LabelPostContent" Grid.Row="3" Grid.Column="0" Content="Post Content:" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+            <Label x:Name="LabelBlogIdOutput" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="LabelPostIdOutput" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="TextPostTitleOutput" Grid.Row="2" Grid.Column="1" Text="" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="TextPostContentOutput" Grid.Row="3" Grid.Column="1" Text="" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+            <Button x:Name="ButtonAdd" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Content="Add" Margin="10px" Click="ButtonAdd_Click" />
+            <Button x:Name="ButtonUpdate" Grid.Column="0" Grid.Row="4" Content="Update" Margin="10px" Click="ButtonUpdate_Click" />
+            <Button x:Name="ButtonDelete" Grid.Column="1" Grid.Row="4" Content="Delete" Margin="10px" Click="ButtonDelete_Click" />
+        </Grid>
+
+    </Grid>
+</Window>
