@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<school>
+    <trainers>
+        <trainer1>
+            <name>John Wick</name>
+            <course>C# DEV</course>
+        </trainer1>
+        <trainer2>
+            <name>Nathan</name>
+            <course>C# DEV</course>
+        </trainer2>
+    </trainers>
+</school>
