@@ -13,10 +13,10 @@ namespace lab_24_demo_api
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NorthwindEntities : DbContext
+    public partial class NorthwindEntities1 : DbContext
     {
-        public NorthwindEntities()
-            : base("name=NorthwindEntities")
+        public NorthwindEntities1()
+            : base("name=NorthwindEntities1")
         {
         }
     
@@ -25,16 +25,6 @@ namespace lab_24_demo_api
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<CustomerDemographic> CustomerDemographics { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Order_Detail> Order_Details { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Region> Regions { get; set; }
-        public virtual DbSet<Shipper> Shippers { get; set; }
-        public virtual DbSet<Supplier> Suppliers { get; set; }
-        public virtual DbSet<Territory> Territories { get; set; }
     }
 }

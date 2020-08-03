@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafariPark", "SafariPark\Sa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafariTest", "SafariTest\SafariTest.csproj", "{66525D84-8E7B-45CC-8984-B585ED977D0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_24_demo_api", "lab_24_demo_api\lab_24_demo_api.csproj", "{978D5347-C60F-4064-B278-20F4A9AB10B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{66525D84-8E7B-45CC-8984-B585ED977D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66525D84-8E7B-45CC-8984-B585ED977D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66525D84-8E7B-45CC-8984-B585ED977D0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{978D5347-C60F-4064-B278-20F4A9AB10B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{978D5347-C60F-4064-B278-20F4A9AB10B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{978D5347-C60F-4064-B278-20F4A9AB10B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{978D5347-C60F-4064-B278-20F4A9AB10B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
