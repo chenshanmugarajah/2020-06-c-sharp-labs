@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_24_demo_api", "lab_24_d
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_25_b_api_core_demo", "lab_25_b_api_core_demo\lab_25_b_api_core_demo.csproj", "{1E15B25A-16BC-4C87-9844-FD2FCC84B32B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_26_cats_api", "lab_26_cats_api\lab_26_cats_api.csproj", "{D20494CF-4382-4B0F-AE95-9038E6852619}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1E15B25A-16BC-4C87-9844-FD2FCC84B32B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E15B25A-16BC-4C87-9844-FD2FCC84B32B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E15B25A-16BC-4C87-9844-FD2FCC84B32B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D20494CF-4382-4B0F-AE95-9038E6852619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D20494CF-4382-4B0F-AE95-9038E6852619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D20494CF-4382-4B0F-AE95-9038E6852619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D20494CF-4382-4B0F-AE95-9038E6852619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
