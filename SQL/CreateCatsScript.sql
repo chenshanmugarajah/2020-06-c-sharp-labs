@@ -20,3 +20,14 @@ insert into Cats values ('Lucy', 3, 'Sphinx')
 insert into Cats values ('Jasper', 1, 'Great Cat')
 
 select * from Cats
+
+create table Breeds (
+	BreedId int not null identity(1,1) primary key,
+	BreedName nvarchar(50)
+)
+
+insert into Breeds values ('Abyssinian')
+insert into Breeds values ('AmericanBobTail')
+insert into Breeds values ('Mainecoon')
+insert into Breeds values ('Tabby')
+insert into Breeds values ('Sphinx')
