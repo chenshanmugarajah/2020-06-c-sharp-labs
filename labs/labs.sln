@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_35_async_await", "lab_3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_35_homework", "lab_35_homework\lab_35_homework.csproj", "{50393404-4B55-41AD-B2CC-7762425575E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteMe", "DeleteMe\DeleteMe.csproj", "{D482E833-BB84-4965-9BF8-1091A8025E52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeleteMe", "DeleteMe\DeleteMe.csproj", "{D482E833-BB84-4965-9BF8-1091A8025E52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_36_http", "lab_36_http\lab_36_http.csproj", "{D03CB6A3-1B31-4CA5-A551-5403C3F64588}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D482E833-BB84-4965-9BF8-1091A8025E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D482E833-BB84-4965-9BF8-1091A8025E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D482E833-BB84-4965-9BF8-1091A8025E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D03CB6A3-1B31-4CA5-A551-5403C3F64588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D03CB6A3-1B31-4CA5-A551-5403C3F64588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D03CB6A3-1B31-4CA5-A551-5403C3F64588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D03CB6A3-1B31-4CA5-A551-5403C3F64588}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
