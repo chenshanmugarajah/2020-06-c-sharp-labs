@@ -20,7 +20,7 @@ namespace lab_37_homework
 
         static void Main(string[] args)
         {
-            Menu();
+            MainMenu();
         }
 
         static async void SearchNasaImages(string input)
@@ -32,7 +32,7 @@ namespace lab_37_homework
             }
         }
 
-        static void Menu()
+        static void MainMenu()
         {
             Console.WriteLine("\n===\tWelcome to the NASA data shower\t===");
             Console.Write("What do you want to see? ");
@@ -46,18 +46,16 @@ namespace lab_37_homework
         {
             SearchNasaImages(query);
             Console.WriteLine("\n\n===\tLoading results\t===");
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
 
             Console.WriteLine($"{jsonNasaData.collection.items.Count} results found.\n");
             ShowItems(start, last);
-
-            
         }
 
         static void ShowItems(int start, int last)
         {
             var items = jsonNasaData.collection.items;
-            for (int i = start; i < last; i++)
+            for (int i = start; i <= last; i++)
             {
                 Console.WriteLine($"\nPost {i}");
                 Console.WriteLine($"Title: {items[i].data[0].title}");
@@ -65,27 +63,43 @@ namespace lab_37_homework
                 Console.WriteLine($"Link to image:");
                 Console.WriteLine(items[i].links[0].href);
                 Console.WriteLine("");
+
+                
             }
+            NavigateItems();
+        }
+
+        static void NavigateItems()
+        {
             Console.WriteLine("Next..\t9");
             Console.WriteLine("Back..\t1");
             Console.WriteLine("Exit..\t0");
             Console.Write("Choice: ");
+
             string inputStr = Console.ReadLine();
             int input = Convert.ToInt32(inputStr);
-            if (input == 0) Menu();
+
+            if (input == 0)
+            {
+                MainMenu();
+                start = 0;
+                last = start + 5;
+            }
             if (input == 9)
             {
-                if (last + 10 <= jsonNasaData.collection.items.Count)
+                if (last + 5 < jsonNasaData.collection.items.Count)
                 {
-                    start += 5;
+                    start = start + 5;
+                    last = start + 5;
                 }
-                else last = jsonNasaData.collection.items.Count;
+                else last = jsonNasaData.collection.items.Count - 1;
             }
-            else
+            if (input == 1)
             {
-                if (start - 5 >= 0)
+                if (start - 5 > 0)
                 {
-                    start -= 5;
+                    start = start - 5;
+                    last = start - 5;
                 }
                 else start = 0;
             }
