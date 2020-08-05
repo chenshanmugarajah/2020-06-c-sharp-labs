@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json.Serialization;
 using System.Threading;
+using System.Xml.Serialization;
+using Microsoft.VisualBasic.CompilerServices;
 using Newtonsoft.Json;
 
 namespace lab_37_homework
@@ -13,12 +15,12 @@ namespace lab_37_homework
         public static string searchExt = "/search?q=";
         public static string response;
         public static Root jsonNasaData;
+        public static int start = 0;
+        public static int last = start + 5;
 
         static void Main(string[] args)
         {
-            SearchNasaImages("cloud");
-            Thread.Sleep(2000);
-            DisplayNasaData(jsonNasaData.collection.items);
+            Menu();
         }
 
         static async void SearchNasaImages(string input)
@@ -32,14 +34,63 @@ namespace lab_37_homework
 
         static void Menu()
         {
+            Console.WriteLine("\n===\tWelcome to the NASA data shower\t===");
+            Console.Write("What do you want to see? ");
+            string query = Console.ReadLine();
+            Console.WriteLine($"You are searching for {query}");
+            Thread.Sleep(2000);
+            DisplayNasaData(query);
         }
 
-        static void DisplayNasaData (List<Item> items)
+        static void DisplayNasaData (string query)
         {
-            foreach (var item in items)
+            SearchNasaImages(query);
+            Console.WriteLine("\n\n===\tLoading results\t===");
+            Thread.Sleep(2000);
+
+            Console.WriteLine($"{jsonNasaData.collection.items.Count} results found.\n");
+            ShowItems(start, last);
+
+            
+        }
+
+        static void ShowItems(int start, int last)
+        {
+            var items = jsonNasaData.collection.items;
+            for (int i = start; i < last; i++)
             {
-                
+                Console.WriteLine($"\nPost {i}");
+                Console.WriteLine($"Title: {items[i].data[0].title}");
+                Console.WriteLine($"Description: {items[i].data[0].description}");
+                Console.WriteLine($"Link to image:");
+                Console.WriteLine(items[i].links[0].href);
+                Console.WriteLine("");
             }
+            Console.WriteLine("Next..\t9");
+            Console.WriteLine("Back..\t1");
+            Console.WriteLine("Exit..\t0");
+            Console.Write("Choice: ");
+            string inputStr = Console.ReadLine();
+            int input = Convert.ToInt32(inputStr);
+            if (input == 0) Menu();
+            if (input == 9)
+            {
+                Console.WriteLine("test");
+                if (last + 10 <= jsonNasaData.collection.items.Count)
+                {
+                    start += 5;
+                }
+                else last = jsonNasaData.collection.items.Count;
+            }
+            else
+            {
+                if (start - 5 >= 0)
+                {
+                    start -= 5;
+                }
+                else start = 0;
+            }
+            ShowItems(start, last);
         }
     }
 
