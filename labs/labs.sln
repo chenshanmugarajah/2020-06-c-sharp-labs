@@ -5,13 +5,17 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_32_2_tables_hw2", "lab_32_2_tables_hw2\lab_32_2_tables_hw2.csproj", "{63B869B0-0127-488A-B698-0EA6AF76694E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_32_tasks", "lab_32_tasks\lab_32_tasks.csproj", "{C7965662-1F64-4B97-AA1F-E3A5EF3D5A0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_32_tasks", "lab_32_tasks\lab_32_tasks.csproj", "{C7965662-1F64-4B97-AA1F-E3A5EF3D5A0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_33_task_array", "lab_33_task_array\lab_33_task_array.csproj", "{E1D08991-F927-4AC1-8AAF-F6AEC540089E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_33_task_array", "lab_33_task_array\lab_33_task_array.csproj", "{E1D08991-F927-4AC1-8AAF-F6AEC540089E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_34_parallel_processing", "lab_34_parallel_processing\lab_34_parallel_processing.csproj", "{41C9DF98-F693-4BDB-8133-A6317B82941E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_34_parallel_processing", "lab_34_parallel_processing\lab_34_parallel_processing.csproj", "{41C9DF98-F693-4BDB-8133-A6317B82941E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_35_async_await", "lab_35_async_await\lab_35_async_await.csproj", "{44A9BB39-94FC-42F5-9205-00E2A56E44EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_35_async_await", "lab_35_async_await\lab_35_async_await.csproj", "{44A9BB39-94FC-42F5-9205-00E2A56E44EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_35_homework", "lab_35_homework\lab_35_homework.csproj", "{50393404-4B55-41AD-B2CC-7762425575E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteMe", "DeleteMe\DeleteMe.csproj", "{D482E833-BB84-4965-9BF8-1091A8025E52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{44A9BB39-94FC-42F5-9205-00E2A56E44EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44A9BB39-94FC-42F5-9205-00E2A56E44EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44A9BB39-94FC-42F5-9205-00E2A56E44EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50393404-4B55-41AD-B2CC-7762425575E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50393404-4B55-41AD-B2CC-7762425575E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50393404-4B55-41AD-B2CC-7762425575E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50393404-4B55-41AD-B2CC-7762425575E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D482E833-BB84-4965-9BF8-1091A8025E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D482E833-BB84-4965-9BF8-1091A8025E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D482E833-BB84-4965-9BF8-1091A8025E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D482E833-BB84-4965-9BF8-1091A8025E52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

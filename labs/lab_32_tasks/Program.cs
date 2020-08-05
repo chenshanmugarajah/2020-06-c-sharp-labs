@@ -14,7 +14,7 @@ namespace lab_32_tasks
         static void Main(string[] args)
         {
             var thread01 = new Thread(() => { Thread.Sleep(3000); Console.WriteLine($"This thread01 is at {s.ElapsedMilliseconds}"); });
-            var task01 = new Task(() => { Thread.Sleep(1000); Console.WriteLine($"This task01 is at {s.ElapsedMilliseconds}"); });
+            var task01 = new Task(() => { Thread.Sleep(3000); Console.WriteLine($"This task01 is at {s.ElapsedMilliseconds}"); });
             var task02 = new Task(() => { Thread.Sleep(2000); Console.WriteLine($"This task02 is at {s.ElapsedMilliseconds}"); });
 
             var task04 = Task.Factory.StartNew(
