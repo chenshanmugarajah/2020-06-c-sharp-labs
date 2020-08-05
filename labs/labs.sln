@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeleteMe", "DeleteMe\Delete
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_36_http", "lab_36_http\lab_36_http.csproj", "{D03CB6A3-1B31-4CA5-A551-5403C3F64588}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_37_http_deserialize", "lab_37_http_deserialize\lab_37_http_deserialize.csproj", "{0FE756BC-3108-4874-BA33-F5674DCF123C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_37_http_deserialize", "lab_37_http_deserialize\lab_37_http_deserialize.csproj", "{0FE756BC-3108-4874-BA33-F5674DCF123C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_37_homework", "lab_37_homework\lab_37_homework.csproj", "{E0B34B7B-2383-41A3-A444-DC0EE5DF023A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{0FE756BC-3108-4874-BA33-F5674DCF123C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FE756BC-3108-4874-BA33-F5674DCF123C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FE756BC-3108-4874-BA33-F5674DCF123C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0B34B7B-2383-41A3-A444-DC0EE5DF023A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B34B7B-2383-41A3-A444-DC0EE5DF023A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B34B7B-2383-41A3-A444-DC0EE5DF023A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B34B7B-2383-41A3-A444-DC0EE5DF023A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
