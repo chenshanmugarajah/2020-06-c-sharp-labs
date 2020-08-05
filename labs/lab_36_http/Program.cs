@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mail;
@@ -11,7 +12,7 @@ namespace lab_36_http
 {
     class Program
     {
-        static Uri url = new Uri("https://jsonplaceholder.typicode.com/todos/5");
+        static Uri url = new Uri("https://jsonplaceholder.typicode.com/todos");
         static Uri url2 = new Uri("https://www.bbc.co.uk");
 
         static void Main(string[] args)
