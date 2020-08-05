@@ -75,7 +75,6 @@ namespace lab_37_homework
             if (input == 0) Menu();
             if (input == 9)
             {
-                Console.WriteLine("test");
                 if (last + 10 <= jsonNasaData.collection.items.Count)
                 {
                     start += 5;
