@@ -1,34 +1,31 @@
 ﻿use master
 
-drop database if exists CatDB
+drop database if exists LibraryDB
 
-create database CatDB
+create database LibraryDB
 go
 
-use CatDB
+use LibraryDB
 go
 
-create table Breeds (
-	BreedId int not null identity(1,1) primary key,
-	BreedName nvarchar(50)
+create table BoroughLibrarys (
+	LibraryId int not null identity(1,1) primary key,
+	LibraryName nvarchar(50)
 )
 
-insert into Breeds values ('Abyssinian')
-insert into Breeds values ('AmericanBobTail')
-insert into Breeds values ('Mainecoon')
-insert into Breeds values ('Tabby')
-insert into Breeds values ('Sphinx')
+insert into BoroughLibrarys values ('Redbridge Library')
+insert into BoroughLibrarys values ('Fullwell Cross Library')
+insert into BoroughLibrarys values ('Ilford Library')
+insert into BoroughLibrarys values ('Havering Library')
+insert into BoroughLibrarys values ('Oaks Park Library')
 
-create table Cats (
-	CatId int not null identity(1,1) primary key,
-	CatName nvarchar(50),
-	CatAge int,
-	BreedId int FOREIGN KEY REFERENCES Breeds(BreedId) 
+create table Books (
+	BookId int not null identity(1,1) primary key,
+	BookTitle nvarchar(50),
+	BookAuthor nvarchar(50),
+	LibraryId int FOREIGN KEY REFERENCES BoroughLibrarys(LibraryId) 
 )
 
-insert into Cats values ('Ozzies', 15, 3)
-insert into Cats values ('Lucy', 3, 5)
-insert into Cats values ('Jasper', 1, 1)
-
-select * from Cats c
-inner join Breeds b on b.BreedId = c.BreedId
+insert into Books values ('Of Mice and Men', 'J.K.Rowling', 3)
+insert into Books values ('Harry Potter 1', 'Stanley', 5)
+insert into Books values ('Indiana Jones', 'Author2', 1)
