@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_37_http_deserialize", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_37_homework", "lab_37_homework\lab_37_homework.csproj", "{E0B34B7B-2383-41A3-A444-DC0EE5DF023A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_35_library_api", "lab_35_library_api\lab_35_library_api.csproj", "{258A7E5B-E49D-4C20-A543-83E97778F731}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_32_library_api", "lab_35_library_api\lab_32_library_api.csproj", "{258A7E5B-E49D-4C20-A543-83E97778F731}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

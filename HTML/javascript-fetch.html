@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fetch Data</title>
+</head>
+<body>
+    <h1>This web page gets some API data</h1>
+    <button onclick="getData()">Get Some Data</button>
+    <div id="dataDiv">No data yet</div>
+    <script>
+        var x = 1;
+        console.log(x);
+        
+        function getData(){
+            document.getElementById("dataDiv").innerHTML = "";
+            fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response => response.json())
+            .then(json => json.forEach(item => {
+                document.getElementById("dataDiv").innerHTML += JSON.stringify(item)
+                document.getElementById("dataDiv").appendChild(document.createElement("br"))
+            }))
+        }
+    </script>
+</body>
+</html>
