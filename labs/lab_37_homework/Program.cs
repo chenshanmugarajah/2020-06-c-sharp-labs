@@ -16,7 +16,7 @@ namespace lab_37_homework
         public static string response;
         public static Root jsonNasaData;
         public static int start = 0;
-        public static int last = start + 5;
+        public static int last = 5;
 
         static void Main(string[] args)
         {
@@ -83,25 +83,25 @@ namespace lab_37_homework
             {
                 MainMenu();
                 start = 0;
-                last = start + 5;
+                last = 5;
             }
             if (input == 9)
             {
                 if (last + 5 < jsonNasaData.collection.items.Count)
                 {
                     start = start + 5;
-                    last = start + 5;
+                    last = last + 5;
                 }
-                else last = jsonNasaData.collection.items.Count - 1;
+                else { last = jsonNasaData.collection.items.Count - 1; start = jsonNasaData.collection.items.Count - 5; }
             }
             if (input == 1)
             {
                 if (start - 5 > 0)
                 {
                     start = start - 5;
-                    last = start - 5;
+                    last = last - 5;
                 }
-                else start = 0;
+                else { start = 0; last = 5; }
             }
             ShowItems(start, last);
         }
