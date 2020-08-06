@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_36_http", "lab_36_http\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_37_http_deserialize", "lab_37_http_deserialize\lab_37_http_deserialize.csproj", "{0FE756BC-3108-4874-BA33-F5674DCF123C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_37_homework", "lab_37_homework\lab_37_homework.csproj", "{E0B34B7B-2383-41A3-A444-DC0EE5DF023A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_37_homework", "lab_37_homework\lab_37_homework.csproj", "{E0B34B7B-2383-41A3-A444-DC0EE5DF023A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_35_library_api", "lab_35_library_api\lab_35_library_api.csproj", "{258A7E5B-E49D-4C20-A543-83E97778F731}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{E0B34B7B-2383-41A3-A444-DC0EE5DF023A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0B34B7B-2383-41A3-A444-DC0EE5DF023A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0B34B7B-2383-41A3-A444-DC0EE5DF023A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{258A7E5B-E49D-4C20-A543-83E97778F731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{258A7E5B-E49D-4C20-A543-83E97778F731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{258A7E5B-E49D-4C20-A543-83E97778F731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{258A7E5B-E49D-4C20-A543-83E97778F731}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
