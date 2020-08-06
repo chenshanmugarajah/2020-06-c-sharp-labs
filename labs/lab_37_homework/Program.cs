@@ -46,7 +46,7 @@ namespace lab_37_homework
         {
             SearchNasaImages(query);
             Console.WriteLine("\n\n===\tLoading results\t===");
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
 
             Console.WriteLine($"{jsonNasaData.collection.items.Count} results found.\n");
             ShowItems(start, last);
@@ -54,7 +54,10 @@ namespace lab_37_homework
 
         static void ShowItems(int start, int last)
         {
+            // Get the items
             var items = jsonNasaData.collection.items;
+
+            // Display five items at a time
             for (int i = start; i <= last; i++)
             {
                 Console.WriteLine($"\nPost {i}");
@@ -63,22 +66,23 @@ namespace lab_37_homework
                 Console.WriteLine($"Link to image:");
                 Console.WriteLine(items[i].links[0].href);
                 Console.WriteLine("");
-
-                
             }
             NavigateItems();
         }
 
         static void NavigateItems()
         {
+            // Navigate menu
             Console.WriteLine("Next..\t9");
             Console.WriteLine("Back..\t1");
-            Console.WriteLine("Exit..\t0");
+            Console.WriteLine("Menu..\t0");
             Console.Write("Choice: ");
 
+            // Reading input from user
             string inputStr = Console.ReadLine();
             int input = Convert.ToInt32(inputStr);
 
+            // Deciding what to do with input
             if (input == 0)
             {
                 MainMenu();
@@ -103,11 +107,13 @@ namespace lab_37_homework
                 }
                 else { start = 0; last = 5; }
             }
+
+            // Show items again
             ShowItems(start, last);
         }
     }
 
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
+    // Classes to map to API object
     public class Link
     {
         public string href;
