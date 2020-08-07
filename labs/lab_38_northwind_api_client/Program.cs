@@ -7,6 +7,7 @@ using System.Threading;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace lab_38_northwind_api_client
 {
@@ -15,39 +16,64 @@ namespace lab_38_northwind_api_client
         static List<Customer> customers = new List<Customer>();
         static Customer customer = new Customer();
         static Uri url = new Uri("https://localhost:44316/api/customers/");
+        private static Random random = new Random();
 
         static void Main(string[] args)
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
             GetCustomers();
+            Thread.Sleep(2000);
 
-            //Console.WriteLine("===\tGetting Customer\t===");
-            //GetCustomer("ALFKI");
-            //Thread.Sleep(2000);
-            //Console.WriteLine($"Customer contact name {customer.ContactName}");
+            GetCustomer("ALFKI");
+            Thread.Sleep(2000);
+            var original = customer;
+            Console.WriteLine(original.ContactName);
 
-            //var newCustomer = new Customer()
-            //{
-            //    CustomerId = "CHENU",
-            //    ContactName = "Chen Shanmugarajah",
-            //    CompanyName = "Sparta Global",
-            //    City = "London",
-            //    Country = "UK"
-            //};
-            //AddCustomer(newCustomer);
-            //Thread.Sleep(3000);
+            UpdateCustomer("ALFKI", "Jason Bourne");
+            Thread.Sleep(2000);
 
+            GetCustomer("ALFKI");
+            Thread.Sleep(2000);
+            var updated = customer;
+            Console.WriteLine(updated.ContactName);
 
-
-            Console.WriteLine("===\tGetting All Customers\t===");
-            GetCustomers();
-            Thread.Sleep(3000);
-            customers.ForEach(customer => Console.WriteLine($"Customer contact name {customer.ContactName}"));
-
-            //DeleteCustomerAsync2("CHENU");
         }
 
-        static async Task<HttpResponseMessage> DeleteCustomerAsync2(string customerid)
+        // UPDATE customer detail
+        static async void UpdateCustomer(string targetId, string contactName)
+        {
+            GetCustomer(targetId);
+            Thread.Sleep(2000);
+
+            Console.WriteLine("===\tUpdating Customer\t===");
+            
+            customer.ContactName = contactName;
+
+            var customerObj = JsonConvert.SerializeObject(customer);
+            var httpContent = new StringContent(customerObj);
+
+            httpContent.Headers.ContentType.MediaType = "application/json";
+            httpContent.Headers.ContentType.CharSet = "UTF-8";
+
+            using (var httpclient = new HttpClient())
+            {
+                var response = await httpclient.PutAsync(url + targetId, httpContent);
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("===\tSuccessfully Updated\t===");
+                }
+                else
+                {
+                    Console.WriteLine(response);
+                }
+                customer = null;
+            }
+        }
+
+
+
+        // DELETE customer async with response
+        static async Task<HttpResponseMessage> DeleteCustomerAsyncWithResponse(string customerid)
         {
             if (CustomerExists(customerid))
             {
@@ -68,6 +94,7 @@ namespace lab_38_northwind_api_client
             }
         }
 
+        // DELETE customer async
         static async void DeleteCustomerAsync(string customerid)
         {
             if (CustomerExists(customerid))
@@ -86,6 +113,7 @@ namespace lab_38_northwind_api_client
             }
         }
 
+        // DELETE customer
         static void DeleteCustomer (string customerId)
         {
             if (CustomerExists(customerId))
@@ -104,14 +132,10 @@ namespace lab_38_northwind_api_client
                 Console.Write("==\tId does not exist\t===");
             }
         }
+        
 
-        static bool CustomerExists(string customerId)
-        {
-            var customerExists = customers.FirstOrDefault(c => c.CustomerId == customerId);
-            if (customerExists != null) return true;
-            else return false;
-        }
-
+        
+        // CREATE customer into database
         static async void AddCustomer(Customer newCustomer)
         {
             if (!CustomerExists(newCustomer.CustomerId))
@@ -139,8 +163,16 @@ namespace lab_38_northwind_api_client
             }
         }
 
+
+
+        // GET customer
         static async void GetCustomer(string id)
         {
+            if (!CustomerExists(id))
+            {
+                Console.WriteLine("===\tCustomer does not exist\t===");
+                return;
+            }
             using (var httpClient = new HttpClient())
             {
                 var response = await httpClient.GetStringAsync(url + id);
@@ -148,6 +180,7 @@ namespace lab_38_northwind_api_client
             }
         }
 
+        // GET all customers
         static async void GetCustomers()
         {
             using (var httpClient = new HttpClient())
@@ -155,6 +188,35 @@ namespace lab_38_northwind_api_client
                 var response = await httpClient.GetStringAsync(url);
                 customers = JsonConvert.DeserializeObject<List<Customer>>(response);
             }
+        }
+
+
+
+        // ========================== HELPER FUNCTIONS ==============================
+
+        // Check if customer exists in database
+        static bool CustomerExists(string customerId)
+        {
+            var customerExists = customers.FirstOrDefault(c => c.CustomerId == customerId);
+            if (customerExists != null) return true;
+            else return false;
+        }
+
+        // Generate customer key based on contactname
+        static string GenerateCustomerKey(string contactname)
+        {
+            string uppercaseName = Regex.Replace(contactname, @"\s+", "").ToUpper();
+            string key = new string(Enumerable.Repeat(uppercaseName, 5)
+            .Select(s => s[random.Next(s.Length)]).ToArray());
+
+            customers.ForEach(c =>
+            {
+                if (c.CustomerId == key)
+                {
+                    GenerateCustomerKey(contactname);
+                } 
+            });
+            return key;
         }
     }
 }
