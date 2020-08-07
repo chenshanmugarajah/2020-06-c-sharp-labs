@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using lab_35_library_api.Models;
 
-namespace lab_35_library_api.Controllers
+namespace lab_32_library_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

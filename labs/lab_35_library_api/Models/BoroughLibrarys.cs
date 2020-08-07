@@ -7,12 +7,12 @@ namespace lab_35_library_api.Models
     {
         public BoroughLibrarys()
         {
-            Books = new HashSet<Books>();
+            Books = new List<Books>();
         }
 
         public int LibraryId { get; set; }
         public string LibraryName { get; set; }
 
-        public virtual ICollection<Books> Books { get; set; }
+        public virtual List<Books> Books { get; set; }
     }
 }
