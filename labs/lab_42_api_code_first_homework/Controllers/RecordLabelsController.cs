@@ -24,14 +24,14 @@ namespace lab_42_api_code_first_homework.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<RecordLabel>>> GetRecordLabels()
         {
-            return await _context.RecordLabels.ToListAsync();
+            return await _context.RecordLabels.Include("Songs").ToListAsync();
         }
 
         // GET: api/RecordLabels/5
         [HttpGet("{id}")]
         public async Task<ActionResult<RecordLabel>> GetRecordLabel(int id)
         {
-            var recordLabel = await _context.RecordLabels.FindAsync(id);
+            var recordLabel = await _context.RecordLabels.Include("Songs").SingleOrDefaultAsync(r => r.RecordLabelId == id);
 
             if (recordLabel == null)
             {

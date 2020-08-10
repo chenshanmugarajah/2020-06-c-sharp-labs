@@ -28,6 +28,8 @@ namespace lab_42_api_code_first_homework
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddDbContext<MyDbContext>(options => options.UseSqlite("Data Source = APIDatabase.db"));
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddDbContext<IndustryDbContext>(options => options.UseSqlite("Data Source = MusicIndustryV2.db"));
             services.AddControllers();
         }

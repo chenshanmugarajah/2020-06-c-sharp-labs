@@ -24,14 +24,14 @@ namespace lab_42_api_code_first_homework.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Song>>> GetSongs()
         {
-            return await _context.Songs.ToListAsync();
+            return await _context.Songs.Include("RecordLabel").ToListAsync();
         }
 
         // GET: api/Songs/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Song>> GetSong(int id)
         {
-            var song = await _context.Songs.FindAsync(id);
+            var song = await _context.Songs.Include("RecordLabel").SingleOrDefaultAsync(p => p.RecordLabelId == id);
 
             if (song == null)
             {
