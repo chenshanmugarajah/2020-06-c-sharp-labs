@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_42_xml_deserialisation"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_42_entity_code_first_homework", "lab_42_entity_code_first_homework\lab_42_entity_code_first_homework.csproj", "{21CBD434-F192-4BB3-8BB8-334AC1B9B6E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_42_api_code_first_homework", "lab_42_api_code_first_homework\lab_42_api_code_first_homework.csproj", "{C50BDCB7-5B68-435F-A5C3-79F25ADF82FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{21CBD434-F192-4BB3-8BB8-334AC1B9B6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21CBD434-F192-4BB3-8BB8-334AC1B9B6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21CBD434-F192-4BB3-8BB8-334AC1B9B6E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C50BDCB7-5B68-435F-A5C3-79F25ADF82FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50BDCB7-5B68-435F-A5C3-79F25ADF82FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50BDCB7-5B68-435F-A5C3-79F25ADF82FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50BDCB7-5B68-435F-A5C3-79F25ADF82FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
