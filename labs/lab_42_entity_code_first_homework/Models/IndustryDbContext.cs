@@ -12,7 +12,7 @@ namespace lab_42_entity_code_first_homework.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            // builder.UseSqlite("Data Source = UserDatabase.db");
+            //builder.UseSqlite("Data Source = MusicIndustry.db");
             builder.UseSqlServer(@"Data Source = (localdb)\mssqllocaldb; initial catalog = MusicIndustry");
         }
 
