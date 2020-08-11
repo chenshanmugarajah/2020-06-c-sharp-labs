@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_32_2_tables_hw2", "lab_32_2_tables_hw2\lab_32_2_tables_hw2.csproj", "{63B869B0-0127-488A-B698-0EA6AF76694E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_32_tasks", "lab_32_tasks\lab_32_tasks.csproj", "{C7965662-1F64-4B97-AA1F-E3A5EF3D5A0C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_33_task_array", "lab_33_task_array\lab_33_task_array.csproj", "{E1D08991-F927-4AC1-8AAF-F6AEC540089E}"
@@ -37,9 +35,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_41_xml", "lab_41_xml\la
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_42_xml_deserialisation", "lab_42_xml_deserialisation\lab_42_xml_deserialisation.csproj", "{93294F63-7D78-4499-9046-4564EAD3D3A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_42_entity_code_first_homework", "lab_42_entity_code_first_homework\lab_42_entity_code_first_homework.csproj", "{21CBD434-F192-4BB3-8BB8-334AC1B9B6E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_42_entity_code_first_homework", "lab_42_entity_code_first_homework\lab_42_entity_code_first_homework.csproj", "{21CBD434-F192-4BB3-8BB8-334AC1B9B6E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_42_api_code_first_homework", "lab_42_api_code_first_homework\lab_42_api_code_first_homework.csproj", "{C50BDCB7-5B68-435F-A5C3-79F25ADF82FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_42_api_code_first_homework", "lab_42_api_code_first_homework\lab_42_api_code_first_homework.csproj", "{C50BDCB7-5B68-435F-A5C3-79F25ADF82FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html_hello_world", "html_hello_world", "{C405D57B-46C1-4F35-B3A6-7C446A7AC19A}"
+	ProjectSection(SolutionItems) = preProject
+		index.html = index.html
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +50,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{63B869B0-0127-488A-B698-0EA6AF76694E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63B869B0-0127-488A-B698-0EA6AF76694E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63B869B0-0127-488A-B698-0EA6AF76694E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63B869B0-0127-488A-B698-0EA6AF76694E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C7965662-1F64-4B97-AA1F-E3A5EF3D5A0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C7965662-1F64-4B97-AA1F-E3A5EF3D5A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7965662-1F64-4B97-AA1F-E3A5EF3D5A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
