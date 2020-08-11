@@ -9,22 +9,6 @@ using System.Xml.Serialization;
 
 namespace lab_42_xml_deserialisation
 {
-    [Serializable, XmlRoot("Products")]
-    public class Products
-    {
-        [XmlElement("ProductId")]
-        public int ProductId { get; set; }
-
-        [XmlElement("ProductName")]
-        public string ProductName { get; set; }
-
-        [XmlElement("ProductUnitPrice")]
-        public decimal ProductUnitPrice { get; set; }
-
-        [XmlElement("Product")]
-        public List<Products> ProductProducts { get; set; }
-    }
-
     class Program : DbContext
     {
         static void Main(string[] args)
@@ -46,7 +30,7 @@ namespace lab_42_xml_deserialisation
                     select new XElement ("Product", 
                         new XElement("ProductId", p.ProductId),
                         new XElement("ProductName", p.ProductName),
-                        new XElement("ProductUnitPrice", p.UnitPrice)
+                        new XElement("UnitPrice", p.UnitPrice)
                     )
             );
 
@@ -54,14 +38,15 @@ namespace lab_42_xml_deserialisation
             var xmlProductsDoc = new XDocument(xmlProducts);
             xmlProductsDoc.Save("XMLProducts.xml");
 
-            // to send large data over internet, stream data from internet
+            var XMLProducts = new Products();
             using (var reader = new StreamReader("XMLProducts.xml"))
             {
-                // deserialize from XML to Products instance
-                var serialiser = new XmlSerializer(typeof(Products));
-                deProducts = (Products)serialiser.Deserialize(reader);
+                // deserialize from xml to Northwind Products
+                var serializer = new XmlSerializer(typeof(Products));
+                XMLProducts = (Products)serializer.Deserialize(reader);
             }
-
+            Console.WriteLine("\n\nProducts Deserialized");
+            XMLProducts.ProductList.ForEach(p => Console.WriteLine($"{p.ProductId,-15}{p.ProductName,-40}{p.UnitPrice}"));
         }
 
         
