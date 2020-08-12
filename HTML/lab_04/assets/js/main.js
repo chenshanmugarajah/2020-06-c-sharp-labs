@@ -1,27 +1,33 @@
+searchNasa();
 
-fetch("https://images-api.nasa.gov/search?q=rover")
-  .then(
-    function(response) {
-      if (response.status !== 200) {
-        console.log('Looks like there was a problem. Status Code: ' +
-          response.status);
-        return;
-      }
-      response.json().then(function(data) {
-        console.log(data.collection.items)
-        displayInfo(data.collection.items)
-      });
-    }
-  )
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
+function searchNasa (query = "rover") {
+    fetch("https://images-api.nasa.gov/search?q=" + query)
+    .then(
+        function(response) {
+        if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' +
+            response.status);
+            return;
+        }
+        response.json().then(function(data) {
+            console.log(data.collection.items)
+            displayInfo(data.collection.items)
+        });
+        }
+    )
+    .catch(function(err) {
+        console.log('Fetch Error :-S', err);
+    });
+}
 
-  function displayInfo(nasadata) {
+function displayInfo(nasadata) {
 
     var nasainfo = document.getElementById("nasa-info");
-
+    nasainfo.innerHTML = "";
+    
     for (var i=0; i<nasadata.length / 4; i++) {
+
+        
 
         var title = nasadata[i].data[0].title
         var description = nasadata[i].data[0].description
@@ -42,4 +48,9 @@ fetch("https://images-api.nasa.gov/search?q=rover")
 
         nasainfo.appendChild(infoDiv)
     }
-  }
+}
+
+var searchQuery = document.getElementById("searchQuery");
+var searchButton = document.getElementById("submitSearch");
+
+searchButton.onclick = () => { searchNasa(searchQuery.value) }
