@@ -24,7 +24,7 @@ function displayInfo(nasadata) {
 
     var nasainfo = document.getElementById("nasa-info");
     nasainfo.innerHTML = "";
-    
+
     for (var i=0; i<nasadata.length / 4; i++) {
 
         
@@ -42,6 +42,7 @@ function displayInfo(nasadata) {
         image.src = imagesrc
         
         var infoDiv = document.createElement("div");
+        infoDiv.className = "info-item";
         infoDiv.appendChild(heading)
         infoDiv.appendChild(info)
         infoDiv.appendChild(image)
