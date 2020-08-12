@@ -1,0 +1,29 @@
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    text-align: center;
+}
+
+#nasa-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.info-item {
+    height: 400px;
+    width: 400px;
+    margin: 10px;
+    padding: 5px;
+    border: 2px black solid;
+}
+
+.info-item:hover {
+    background-color: #c7c7c7;
+}
+
+.info-item img {
+    height: 200px;
+    width: 300px;
+}
