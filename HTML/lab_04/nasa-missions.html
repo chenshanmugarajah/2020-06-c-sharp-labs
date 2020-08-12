@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA API</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/main.js" defer>
+        window.onload(getData());
+    </script>
 </head>
 <body>
     <div class="container">
@@ -21,6 +23,10 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="nasa-missions.html">Missions</a></li>
             </ul>
+        </div>
+
+        <div class="nasa-info">
+            
         </div>
 
     </div>
