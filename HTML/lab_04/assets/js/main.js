@@ -27,8 +27,6 @@ function displayInfo(nasadata) {
 
     for (var i=0; i<nasadata.length / 4; i++) {
 
-        
-
         var title = nasadata[i].data[0].title
         var description = nasadata[i].data[0].description
         var imagesrc = nasadata[i].links[0].href
