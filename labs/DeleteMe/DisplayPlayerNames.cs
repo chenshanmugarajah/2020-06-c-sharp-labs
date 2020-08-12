@@ -13,6 +13,7 @@ namespace DeleteMe
 
             Console.WriteLine($"==== Top Players ====");
             string playNameMostKills = GetPlayerNameMost(allPlayerStats, stats => stats.kills);
+
             string playNameMostFlags = GetPlayerNameMost(allPlayerStats, stats => stats.flagsCaptured);
             string playNameMostFlagsV2 = GetPlayerNameMost(allPlayerStats, ScoreByFlagsCapped);
             string playNameMostFlagsV3 = GetPlayerNameMost(allPlayerStats, instance1);

@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    background-color: #9b9b9b;
+    color: whitesmoke;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.navigation-bar {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.navigation-bar ul li {
+    float: left;
+    list-style-type: none;
+}
+
+.navigation-bar ul li a {
+    text-decoration: none;
+    margin: 10px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+
+.navigation-bar ul li a:hover {
+    background-color: gray;
+    color: black;
+}
+
+.planet img {
+    width: 100px;
+    height: 100px;
+    float: left;
+    position: relative;
+    
+    margin: 10px;
+
+    transition-property: width, height;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+}
+
+.planet img:hover {
+    width: 150px;
+    height: 150px;
+}
+
+.search input {
+    height: 40px;
+    width: 300px;
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+.search button {
+    height: 45px;
+    width: 100px;
+    border-radius: 6px;
+}

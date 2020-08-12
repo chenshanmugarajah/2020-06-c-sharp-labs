@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chen's Page</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/jQuery/dist/jquery.js"></script>
+    <script>
+        $(window).on("load",function(){ $(".loader-wrapper").fadeOut(2000); });
+
+        
+        $(window).on("mouseover", () => 
+        {
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            $(".container").css({"background-color": "#" + randomColor });
+            console.log(randomColor)
+         })
+    </script>
+</head>
+<body>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    
+    <div class="container">
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bootstrap-style.html">Bootstrap Page</a></li>
+                    <li><a href="flex-box.html">Flex Box Page</a></li>
+                    <li><a href="css-grid.html">CSS Grid Page</a></li>
+                    <li><a href="css-animtions.html">CSS Animations Page</a></li>
+                    <li><a href="api-page.html">API Page</a></li>
+                </ul>
+            <nav>
+        </header>
+        
+        <main style="text-align: center;">
+            <section>
+                <article>
+                    <h1>Chen's Page</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt consequuntur itaque veniam enim sapiente, voluptatum aliquam a soluta veritatis ducimus? Facilis ipsa saepe iure qui vitae deleniti ipsum consequatur, maiores, ducimus, officia itaque tenetur ad vero quos aliquid? Commodi sit fugit tempore odit necessitatibus, dolore provident inventore nemo veniam debitis autem deleniti! Labore fugit recusandae quas iure illo animi quisquam eum repudiandae deleniti impedit nam quae enim asperiores quidem aliquam cumque temporibus accusantium, dolor molestias delectus quibusdam fuga? Rerum accusamus molestias facilis distinctio quisquam enim soluta modi minus pariatur minima assumenda dolore, sit id fuga voluptatibus? Reprehenderit doloremque nobis dolorem perferendis. Earum fugit omnis accusantium consequuntur minus quam dolores fugiat maiores eum vero sit, possimus magni. Quo nostrum accusamus porro accusantium asperiores, facilis perferendis optio vel natus pariatur aperiam quas eaque saepe sint ut perspiciatis exercitationem iusto praesentium voluptas reiciendis eius non quos nemo! Fugit facilis officiis minus voluptates modi voluptatibus tenetur consequuntur quos fuga itaque, dolore quae fugiat adipisci, placeat ipsum. Rem officiis quia architecto, impedit dolorum, aperiam ad sequi vitae sunt provident est eos. Veritatis perspiciatis quisquam natus, illum totam incidunt sunt quidem saepe distinctio ullam corrupti vero esse cumque nisi ipsum officia at quam harum sit hic!
+                    </p>
+                </article>
+                <article>
+                    <h1>Random Text</h1>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ducimus cumque distinctio autem libero consectetur aliquid nemo blanditiis rerum maiores unde doloremque et provident soluta quod rem, laboriosam reiciendis molestiae est similique aspernatur praesentium. Iure, eius explicabo quidem autem reprehenderit perspiciatis. Vero sint perspiciatis saepe, impedit modi qui debitis maxime nesciunt dolores officiis facere. Labore corrupti quos exercitationem doloribus aut vero odio distinctio debitis. Placeat id voluptatum minus? Itaque velit provident minima! Natus ab sint rerum iste, veritatis amet obcaecati eaque aliquam explicabo, voluptatum fugiat, atque beatae. Voluptate beatae similique vel nam mollitia velit et odio. Accusantium alias culpa beatae quo aliquam dolorem placeat, molestias in delectus impedit illo perspiciatis? Amet quos deleniti deserunt quis consequatur ut veritatis ipsum repellendus exercitationem commodi fuga earum maxime natus saepe eius nostrum perferendis omnis cumque dicta odit quas eveniet, optio maiores! Ad recusandae officia laudantium natus ducimus labore dolore maiores tempora reiciendis voluptatum et sint facere vero veritatis laborum eius, eum sapiente velit. Saepe modi esse nemo, laboriosam eaque voluptatem, ut, error fugiat aliquid officiis laudantium ea? Voluptatem porro eligendi sapiente qui ex assumenda dolorum, impedit, nostrum eum ab temporibus soluta et sed pariatur. Rem est sed voluptates eaque aliquid fugit, ipsam neque.
+                    </p>
+                </article>
+            </section>
+        </main>
+
+    </div>
+</body>
+</html>
