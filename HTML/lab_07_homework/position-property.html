@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Property</title>
+</head>
+<body>
+    <div class="fixed-ex">
+        <p>Fixed Div</p>
+    </div>
+    <div class="absolute-ex">
+        <p>Absolute Div</p>
+    </div>
+    <div class="relative-ex">
+        <p>Relative Div</p>
+    </div>
+
+    <style>
+
+        body {
+            height: 2000px;
+            background-color: #f4f4f4;
+        }
+
+        .fixed-ex {
+            position: fixed;
+            top:0;
+            left:0;
+            background-color:rgb(14, 139, 255);
+        }
+
+        .absolute-ex {
+            position:absolute;
+            margin-top:100px;
+            background-color:rgb(74, 255, 68);
+        }
+
+        .relative-ex {
+            position: relative;
+            margin-top:100px;
+            background-color:#f44;
+        }
+    </style>
+</body>
+</html>
