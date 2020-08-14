@@ -10,7 +10,6 @@ function searchNasa (query = "rover") {
             return;
         }
         response.json().then(function(data) {
-            console.log(data.collection.items)
             displayInfo(data.collection.items)
         });
         }
@@ -25,7 +24,7 @@ function displayInfo(nasadata) {
     var nasainfo = document.getElementById("nasa-info");
     nasainfo.innerHTML = "";
 
-    for (var i=0; i<nasadata.length / 20; i++) {
+    for (var i=0; i<nasadata.length / 10 - 2; i++) {
 
         var title = nasadata[i].data[0].title
         var description = nasadata[i].data[0].description
@@ -74,10 +73,6 @@ function displayInfo(nasadata) {
 
         nasainfo.appendChild(infoDiv)
     }
-}
-
-function modalImage () {
-    document.getElementById()
 }
 
 var searchQuery = document.getElementById("searchQuery");

@@ -5,24 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA API</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
     <script src="./assets/js/main.js"></script>
 </head>
-<body>
-    <div class="container">
+<body onload="followMouse();">
+    <div class="container" id="index-page">
 
+        
         <div class="header">
-            <h1>NASA API Info!</h1>
-            <h3>Information gathered using the NASA image api displayed</h3>
-            <p>Vanilla CSS and JS</p>
+            <h3>NASA API</h3>
+            <h1>Information gathered using the NASA apis</h1>
         </div>
-
+        
+        
         <div class="nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="nasa-missions.html">Missions</a></li>
             </ul>
         </div>
-
+        
+        <div class="planets">
+            <div class="planet" id="mercury">
+                <img src="./assets/images/planets/mercury.png" alt="mercury" class="small-p">
+                <div class="overlay">Mercury</div>
+            </div>
+            <div class="planet" id="venus">
+                <img src="./assets/images/planets/venus.png" alt="venus"  class="small-p">
+                <div class="overlay">Venus</div>
+            </div>
+            <div class="planet" id="earth">
+                <img src="./assets/images/planets/earth.png" alt="earth" class="small-p">
+                <div class="overlay">Earth</div>
+            </div>
+            <div class="planet" id="mars">
+                <img src="./assets/images/planets/mars.png" alt="mars" class="small-p">
+                <div class="overlay">Mars</div>
+            </div>    
+            <div class="planet" id="jupiter">
+                <img src="./assets/images/planets/jupiter.png" alt="jupiter" class="large-p">
+                <div class="overlay">Jupiter</div>
+            </div>
+            <div class="planet" id="saturn">
+                <img src="./assets/images/planets/saturn.png" alt="saturn" class="large-p">
+                <div class="overlay">Saturn</div>
+            </div>        
+            <div class="planet" id="uranus">
+                <img src="./assets/images/planets/uranus.png" alt="uranus" class="small-p">
+                <div class="overlay">Uranus</div>
+            </div>
+            <div class="planet" id="neptune">
+                <img src="./assets/images/planets/neptune.png" alt="neptune" class="medium-p">
+                <div class="overlay">Neptune</div>
+            </div>
+        </div>
+        
+        <div id="planet-info">
+            <!-- Planet info inject by javascript -->
+        </div>
+        
+        <div id="ball"></div>
     </div>
+    
+    <style>
+        
+        .container {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        #ball {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid grey;
+            transition: 0.1s;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .header:hover ~ #ball {
+            width: 60px;
+            height: 60px;
+            border: 10px solid transparent;
+            border-image: url(./assets/images/planets/rocket.png) 30 round;
+            animation: animate 5s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+
+    <script defer>
+
+        var ball = document.getElementById('ball');
+        document.addEventListener('mousemove', function (e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            ball.style.left = x + "px";
+            ball.style.top = y + "px";
+        })
+
+        document.querySelectorAll('img').forEach( (item, idx) => {
+            item.addEventListener('click', () => {
+                searchNasa(item.alt)
+            })
+        })
+
+        document.querySelector('body').addEventListener('click', () => document.getElementById('planet-info').innerHTML = "")
+
+        function searchNasa (query) {
+            fetch("https://images-api.nasa.gov/search?q=" + query)
+            .then(
+                function(response) {
+                if (response.status !== 200) {
+                    console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                    return;
+                }
+                response.json().then(function(data) {
+                    handleResponse(data.collection.items)
+                });
+                }
+            )
+            .catch(function(err) {
+                console.log('Fetch Error :-S', err);
+            });
+        }   
+
+        function handleResponse(data) {
+            // document.getElementById('planet-info').innerHTML = `<h1>${item.alt}<h1/>`;
+            var rand = randomNumberBetween(20, 50)
+            var selectedData = data[rand].data[0]
+            var nasaId = selectedData.nasa_id
+            var title = selectedData.title;
+            var desc = selectedData.description;
+            var date_created = selectedData.date_created.split("T");
+            var img = data[rand].links[0].href
+
+            document.getElementById('planet-info').innerHTML = `<h1>${nasaId}: ${title}<h1/><h3>${desc}<h3/><img src=${img} class="modal-img"><p>Date created: ${date_created[0]}<p/>`;
+
+        }
+
+        function randomNumberBetween(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+    </script>
 </body>
 </html>
