@@ -52,23 +52,26 @@ body {
 }
 
 .planet img {
-    transition: height 2s, margin-left 1s, margin-right 1s;
+    transition: height 2s, border-radius 1s;
+    
 }
 
 .planet img:hover {
     height: 300px;
+    border: 1px grey solid;
+    border-radius: 60%;
 }
 
 .small-p {
-    height: 50px;
-}
-
-.medium-p {
     height: 100px;
 }
 
+.medium-p {
+    height: 150px;
+}
+
 .large-p {
-    height: 200px;
+    height: 250px;
 }
 
 #nasa-info {
@@ -76,6 +79,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    
 }
 
 .info-item {
@@ -83,7 +87,7 @@ body {
     width: 400px;
     margin: 10px;
     padding: 5px;
-    border: 2px black solid;
+    border: 2px white solid;
 }
 
 .info-item:hover {
