@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Javascript Classes</h1>
+    </header>
+
+    <p>Before ES6 classes</p>
+    <p>
+        Before ES6, classes where clumsy and messy
+    </p>
+
+
+    <script>
+        
+        class Person {
+            constructor(firstname, lastname) {
+                this.firstname = firstname;
+                this.lastname = lastname;
+            }
+            
+            getFullName() {
+                return this.firstname + " " + this.lastname;
+            }
+        }
+        
+        var chen = new Person("Chen", "Shanmugarajah")
+        console.log(chen.firstname)
+        
+        class Student extends Person {
+            
+            constructor(firstname, lastname, courseName) {
+                super(firstname, lastname)
+                this.courseName = courseName;
+            }
+
+            getCourseName() {
+                return "Course name is " + this.courseName;
+            }
+        }
+
+        var student = new Student("NotChen", "NotShanmugarajah", "C# Dev")
+        console.log(student.getCourseName())
+        console.log(student.courseName)
+
+    </script>
+</body>
+</html>

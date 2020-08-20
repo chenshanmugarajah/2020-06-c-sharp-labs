@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Dodge the Blocks</title>
+    <link href="./game/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload="startGame()">
+    <div class="container">
+
+        <div class="header">
+            <h3>NASA API</h3>
+            <h1>Information gathered using the NASA apis</h1>
+        </div>
+        
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nasa-missions.html">Missions</a></li>
+            </ul>
+        </div>
+
+        <canvas id="canvas" width="1900px" height="700px">canvas</canvas>
+
+        <p> Dodge the Blocks!<br>Score: <span id="score">0</span>   Level: <span id="level">1</span></p>
+		<button onClick="start()">Start</button>
+		<button onClick="stop()">Stop</button>
+		<button onClick="reset()">Reset</button>
+		<p>WASD or Arrow Keys to move. Shift to slow down.<br>Dodge the blocks for as long as you can! Can you reach a new high score?</p>
+    </div>
+
+    <script src="./game/input.js"></script>
+    <script src="./game/script.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Phil JS Closure</h1>
+    </header>
+
+    <script>
+
+        // var global = 100;
+        // function incrementGlobal() {
+        //     global++;
+        // }
+        // incrementGlobal();
+        // incrementGlobal();
+        // incrementGlobal();
+        // console.log(global);
+
+        // const incrementPrivate = () => {
+        //     var privateVar = 200;
+        //     privateVar++;
+        //     return privateVar;
+        // }
+        // incrementPrivate();
+        // incrementPrivate();
+        // incrementPrivate();
+
+        // console.log(incrementPrivate())
+
+        var add = (
+                    function() {
+                        var counter = 0;
+                        return function(){ counter += 1; return counter}
+                    }
+                  )();
+
+        add(); //1
+        add(); //2
+        add(); //3
+
+        console.log(add()) //4
+        
+
+    </script>
+</body>
+</html>

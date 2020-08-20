@@ -1,0 +1,24 @@
+div {
+    margin: 10px;
+}
+
+#basic-css {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    transition: color 0.5s, background-color 2s, height 1s, width 3s;
+}
+
+#basic-css:hover {
+    height: 200px;
+    width: 200px;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+#js-css {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    transition: color 0.5s, background-color 2s, height 1s, width 3s;
+}

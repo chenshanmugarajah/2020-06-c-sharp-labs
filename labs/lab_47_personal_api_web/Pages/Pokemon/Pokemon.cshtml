@@ -1,0 +1,37 @@
+﻿@page
+@model lab_47_personal_api_web.Pages.Pokemon.PokemonModel
+@{
+    ViewData["Title"] = "Pokemon";
+}
+
+<h1>Pokemon</h1>
+
+<dl class="row" id="listItems">
+
+</dl>
+
+    <script>
+        var data;
+            fetch("https://images-api.nasa.gov/search?q=rover")
+                .then(
+                    function (response) {
+                        if (response.status !== 200) {
+                            console.log('Looks like there was a problem. Status Code: ' +
+                                response.status);
+                            return;
+                        }
+                        response.json().then(function (data) {
+                            console.log(data);
+                            var apiData = data.collection.items;
+                            for (var i = 0; i < apiData.length; i++) {
+                                document.getElementById("listItems").innerHTML += "<dt class='col-sm-2'>" + apiData[i].data[0].title + "</dt>";
+                            }
+                        });
+                    }
+                )
+                .catch(function (err) {
+                    console.log('Fetch Error :-S', err);
+                })
+
+    </script>
+

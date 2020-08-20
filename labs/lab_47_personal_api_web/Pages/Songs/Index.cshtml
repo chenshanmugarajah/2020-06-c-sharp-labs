@@ -1,0 +1,54 @@
+﻿@page
+@model lab_47_personal_api_web.Pages.Songs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Song[0].SongName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Song[0].SongArtist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Song[0].SongSales)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Song[0].RecordLabel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Song) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SongName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SongArtist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SongSales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecordLabel.RecordLabelId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.SongId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.SongId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SongId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

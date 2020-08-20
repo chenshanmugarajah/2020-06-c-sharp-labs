@@ -1,0 +1,50 @@
+﻿@page
+@model lab_47_personal_api_web.Pages.Songs.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Song</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Song.SongId" />
+            <div class="form-group">
+                <label asp-for="Song.SongName" class="control-label"></label>
+                <input asp-for="Song.SongName" class="form-control" />
+                <span asp-validation-for="Song.SongName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Song.SongArtist" class="control-label"></label>
+                <input asp-for="Song.SongArtist" class="form-control" />
+                <span asp-validation-for="Song.SongArtist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Song.SongSales" class="control-label"></label>
+                <input asp-for="Song.SongSales" class="form-control" />
+                <span asp-validation-for="Song.SongSales" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Song.RecordLabelId" class="control-label"></label>
+                <select asp-for="Song.RecordLabelId" class="form-control" asp-items="ViewBag.RecordLabelId"></select>
+                <span asp-validation-for="Song.RecordLabelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
