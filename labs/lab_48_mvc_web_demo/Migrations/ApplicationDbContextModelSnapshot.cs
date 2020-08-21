@@ -3,21 +3,19 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using lab_48_mvc_web_demo.Data;
 
-namespace lab_48_mvc_web_demo.Data.Migrations
+namespace lab_48_mvc_web_demo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200819134717_initial")]
-    partial class initial
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.5")
+                .HasAnnotation("ProductVersion", "3.1.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -221,6 +219,48 @@ namespace lab_48_mvc_web_demo.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("lab_48_mvc_web_demo.Models.College", b =>
+                {
+                    b.Property<int>("CollegeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CollegeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CollegeId");
+
+                    b.ToTable("College");
+                });
+
+            modelBuilder.Entity("lab_48_mvc_web_demo.Models.Student", b =>
+                {
+                    b.Property<int>("StudentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CollegeId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("CurrentStudent")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("StudentName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("StudentId");
+
+                    b.HasIndex("CollegeId");
+
+                    b.ToTable("Student");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -268,6 +308,15 @@ namespace lab_48_mvc_web_demo.Data.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("lab_48_mvc_web_demo.Models.Student", b =>
+                {
+                    b.HasOne("lab_48_mvc_web_demo.Models.College", "College")
+                        .WithMany("Students")
+                        .HasForeignKey("CollegeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -14,5 +14,18 @@ namespace lab_48_mvc_web_demo.Data
         {
         }
         public DbSet<lab_48_mvc_web_demo.Models.College> College { get; set; }
+        public DbSet<lab_48_mvc_web_demo.Models.Student> Student { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            //builder.Entity<College>()
+            //    .HasKey(college => college.CollegeId);
+
+            builder.Entity<College>()
+                .Property(college => college.CollegeName)
+                .IsRequired();
+        }
     }
 }

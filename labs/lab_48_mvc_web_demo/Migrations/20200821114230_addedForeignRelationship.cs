@@ -1,10 +1,9 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace lab_48_mvc_web_demo.Data.Migrations
+namespace lab_48_mvc_web_demo.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class addedForeignRelationship : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,11 +47,24 @@ namespace lab_48_mvc_web_demo.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "College",
+                columns: table => new
+                {
+                    CollegeId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CollegeName = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_College", x => x.CollegeId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     RoleId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -73,7 +85,7 @@ namespace lab_48_mvc_web_demo.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -153,6 +165,28 @@ namespace lab_48_mvc_web_demo.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Student",
+                columns: table => new
+                {
+                    StudentId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    StudentName = table.Column<string>(nullable: true),
+                    DateOfBirth = table.Column<DateTime>(nullable: false),
+                    CurrentStudent = table.Column<bool>(nullable: false),
+                    CollegeId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Student", x => x.StudentId);
+                    table.ForeignKey(
+                        name: "FK_Student_College_CollegeId",
+                        column: x => x.CollegeId,
+                        principalTable: "College",
+                        principalColumn: "CollegeId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -191,6 +225,11 @@ namespace lab_48_mvc_web_demo.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Student_CollegeId",
+                table: "Student",
+                column: "CollegeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -211,10 +250,16 @@ namespace lab_48_mvc_web_demo.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Student");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "College");
         }
     }
 }
